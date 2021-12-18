@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>First Js program</title>
+    <script src="../JS/Simple.js"></script>
+    <script>
+        // function doSomeThing(){
+        //     let v1 = parseInt(prompt("Enter the First value"))
+        //     let v2 = parseInt(prompt("Enter the Second value"))
+        //     let option = prompt("Enter the option as +, -, *, /")
+        //     switch (option) {
+        //         case "+":
+        //             alert("The Added value is " + (v1 + v2))
+        //             break;
+        //         case "-":
+        //             alert("The Subtracted value is " + (v1 - v2))
+        //             break;
+        //         case "*":
+        //             alert("The Multiplied value is " + (v1 * v2))
+        //             break;
+        //         case "/":
+        //             alert("The Divided value is " + (v1 / v2))
+        //             break;    
+        //         default:
+        //             break;
+        //     }
+        // }
+        //Function is interacting with the HTML Elements, so this function remains here. 
+        function onClickFunc(){
+            const v1 = parseFloat($("txtNum1").value) //$ is my custom function created in Simple.js
+            const v2 = parseFloat($("txtNum2").value)
+            const operand = $("option").value;
+            const res  = operation(v1, v2, operand);
+            $("spResult").innerHTML = "<b>The Result: " + res +"</b>"
+        }
+    </script>
+</head>
+<body>
+    <h1>Welcome to JS Programming</h1>
+    <hr/>
+    <div>
+        <input type="number" placeholder="Enter the First Value" id="txtNum1"/>
+        <input type="number" placeholder="Enter the Second Value" id="txtNum2"/>
+        <span>Select an Option:</span>
+        <select id="option">
+            <option>+</option>
+            <option>-</option>
+            <option>*</option>
+            <option>/</option>
+        </select>
+        <p><button onclick="onClickFunc()">Get Result</button></p>
+    </div> 
+    <div>
+        <span id="spResult"></span>
+    </div>
+</body>
+</html>

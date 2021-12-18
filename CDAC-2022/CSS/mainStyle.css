@@ -1,0 +1,16 @@
+*{
+    background-color: lightblue;
+    color:darkblue;
+    padding: 2px;
+    margin: 2px;
+}
+h1{
+    font-size: 38pt;
+    text-align: center;
+}
+div{
+    display: inline-block;
+    border:2px dashed indianred;
+    margin-left: 20px;
+    vertical-align: top;
+}

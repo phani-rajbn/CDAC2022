@@ -1,0 +1,4 @@
+Nodejs:
+Class Employee to represent each record.(Entity class)
+Class EmpData to represent the collection(Dao Class)
+DOM: Functions of DOM along with jQuery for UI features 

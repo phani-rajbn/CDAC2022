@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Management Software</title>
+    <script src="../JS/jquery.js"></script>
+    <link rel="stylesheet" href="../CSS/mainStyle.css">
+    <script src="../JS/Simple.js"></script>
+    <script>
+        const db = new EmpData()//Create the dao object...
+        function onFilter(){
+            populateTable($("#txtFind").val())
+        }
+        //Fills our table element with records fetched from the dao object's findAll Method
+        function populateTable(name){
+            $("table").find("tr:gt(0)").remove();
+            let data = db.findAll(name)//returns an array
+            for (const emp of data) {//using foreach statement
+                let row = `<tr><td>${emp.empId}</td><td>${emp.empName}</td><td>${emp.empAddress}</td><td><a onClick="onFind(${emp.empId})"  href="#">Edit</a></td></tr>`
+                $("table").append(row)
+            }
+        }
+
+        function onFind(id){
+            // let emp = db.findAll("");
+            // for (const emp of data) {
+            //     if(emp.empId == id){
+            //        $("spId").innerText = emp.empId;
+            //        $("txtEditName").value = emp.empName;
+            //        $("txtEditAddress").value = emp.empAddress; 
+            //        return; 
+            //     }
+            // }
+            //Unobtrusive JS
+            //debugger;
+            let emp = db.findById(id)//Gives me single record: find vs. filter
+            $id("spId").innerText = emp.empId;
+            $id("txtEditName").value = emp.empName;
+            $id("txtEditAddress").value = emp.empAddress;
+        }
+        function init(){
+            $id("btnSave").addEventListener("click", function(){
+                //take the input values..
+                const id = $id("spId").innerText;
+                const name = $id("txtEditName").value;
+                const address = $id("txtEditAddress").value;
+                //create the emp object
+                const emp = new Employee(id, name, address)
+                //call the component's update func...
+                db.updateEmployee(emp)
+                alert("Updated Successfully")
+            })
+        }
+        // window.addEventListener("load", function(){
+        //     // let data = db.findAll("")
+        //     // for (const emp of data) {
+        //     //     let row = `<tr><td>${emp.empId}</td><td>${emp.empName}</td><td>${emp.empAddress}</td><td><a onClick="onFind(${emp.empId})" empId="${emp.empId}" href="#">Edit</a></td></tr>`
+        //     //     $id("tblRecords").innerHTML += row
+        //     // }
+        //     populateTable()
+        //     init();
+        // })
+        $(document).ready(function(){
+            //$("div").hide(2000);
+            //$("a:eq(0)").click(populateTable);
+            //populateTable()
+            $("#txtFind").change(onFilter)
+            init()
+        })
+    </script> 
+</head>
+<body>
+    <h1>Employee Management Software</h1>
+    <nav>
+        <a href="#">Show Records</a>
+    </nav>
+    <hr>
+    
+    <div>   
+        <input id="txtFind" placeholder="Filter"/>
+        <p>
+            <table id="tblRecords" border="1">
+                <tr>
+                    <th>Emp ID</th>
+                    <th>Emp Name</th>
+                    <th>Emp Address</th>
+                    <th>Options</th>
+                </tr>
+            </table>
+        </p>
+    </div>
+    <div>
+        <h2>Details of Employee</h2>
+        <p>EmpID:<span id="spId"></span></p>
+        <p>EmpName: <input id="txtEditName"/> </p>
+        <p>EmpAddress: <input id="txtEditAddress"/> </p>
+        <button id="btnSave">Save Changes</button>
+    </div>
+</body>
+</html>
