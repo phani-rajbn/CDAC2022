@@ -2,3 +2,23 @@ Nodejs:
 Class Employee to represent each record.(Entity class)
 Class EmpData to represent the collection(Dao Class)
 DOM: Functions of DOM along with jQuery for UI features 
+JS is totally a client side scripting language. Currently most of the UI frameworks are created using JS. Examples are Angular, React, Vue.js and many more. UR User interface will be JS based Application. 
+Databases are now created as No-SQL DBs. Not Only SQL means that U have databases that store the data as objects instead of relational data. data will be stored in the form of JSON. Casendra and Mongodb are some of those popular No-SQL databases. 
+Limition of JS is that it does not have any IO related APIs. No File IO, Database Programming or any back end interactive APIs. 
+JS runs only with the help of browser in which its interpretor is installed. All browsers follow W3C stds which states that all browsers must support JS in them along with their individual Script Engines. JS becomes the default scripting language for all the popular browsers in the market. 
+Ryan Dyal from Joyant technologies started to use the Chrome's V8 JS engine in his application and started to use JS without an expliit Browser support. This platform is now called as NODE.JS
+Nodejs is basically running js code on this V8 Engine provided by Chrome. It can be installed as a platform inside UR choosen OS and can be worked thru a Command terminal. With Nodejs, JS can now do all activities that is typically done by a server side application that includes FileIO, Port management, IPC, database interactions as well as hosting web applications. 
+Nodejs is designed mainly to create addhoc web servers without much infrastructure in the hardware. Any electronic gadget that has any OS in it with min of 10 KB memory can be used to host a web app in it. 
+Nodejs is supported by a large group of open source users and allow the developers to create Node packages that can be opensource and is hosted under MIT licence into a group called npm(Node Package Manager).   
+As Nodejs Developer, U develop a package and distribute this package under the required licencing thru a repository of packages called NPMJs. com. Developers will consume as well as add new packages in this free world of Nodejs applications. 
+All these things make JS usable as a  server side scripting technology with the help of Nodejs. 
+Why Nodejs?
+The popular web servers are IIS, Apache Tom cat, IBM Web Sphere and many more like that.
+With small infrastructure, Nodejs fits into any kind of Apps like Web Apps, IoT Apps, Smart devices where the hardware is very limited in size. It will be a light weight server that can be executed on a small hardware device. It is single threaded but handles multiple requests using async programming. 
+
+
+
+
+
+
+
