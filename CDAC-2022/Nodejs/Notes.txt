@@ -16,6 +16,20 @@ Why Nodejs?
 The popular web servers are IIS, Apache Tom cat, IBM Web Sphere and many more like that.
 With small infrastructure, Nodejs fits into any kind of Apps like Web Apps, IoT Apps, Smart devices where the hardware is very limited in size. It will be a light weight server that can be executed on a small hardware device. It is single threaded but handles multiple requests using async programming. 
 
+Std Modules of Nodejs:
+Just like the way we create modules and export them to our developers, Nodejs itself has a large no of predefined modules created for our app development. These apis are available as U install nodejs in ur machine. U simply have to import them in ur code and start consuming it. 
+fs module is used for FileSystem operations. 
+http module is used for http server based operations. 
+util module is used for text based operations. 
+Events module is used for creating event based callback functions in our apps. 
+OS module contains APIs for getting OS related info. 
+Path module contains APIs for file merging and filepath maintainance. 
+Over and above, U can download modules developed by 3rd party developers and consume it in ur app.
+EXPRESS, MONGO, SQL are some of the modules developed by the vendors to use their software in nodejs apps.
+NodeRed is additional frameworks for IoT teams to integrate the Nodejs Apps into their hardware devices and consume them. 
+npmjs.org is a centralized repository for all node packages that one can download and consume it in their apps.
+
+
 
 
 
