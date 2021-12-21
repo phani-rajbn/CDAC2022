@@ -11,3 +11,6 @@
 
 ## Day 4
 - FileSystem module of Nodejs to read / write files
+- Standard modules of nodejs
+- http module
+- Os, Util and Console module. 
