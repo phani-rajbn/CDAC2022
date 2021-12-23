@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Management</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+          $.get("Employees", (data)=>{
+              $.each(data, (index, value)=>{
+                  let row = `<tr><td>${value.empId}</td><td>${value.empName}</td><td>${value.empAddress}</td><td>${value.empSalary}</td><td><a class="edit" href="#" myId="${value.empId}">Edit</a></td></tr>`
+                  $("table").append(row)
+                  $(".edit").click(function(){
+                      let eId = $(this).attr("myId")
+                      const url = "Employees/" + eId;
+                      $.get(url, (data)=>{
+                        const selectedEmp = data[0];
+                        $("#txtId").val(selectedEmp.empId);
+                        $("#txtName").val(selectedEmp.empName);
+                        $("#txtAddress").val(selectedEmp.empAddress);
+                        $("#txtSalary").val(selectedEmp.empSalary);
+                      })
+                  }) 
+              })
+
+          })  
+        })
+    </script>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <th>Employee ID</th>
+            <th>Employee Name</th>
+            <th>Employee Address</th>
+            <th>Employee Salary</th>
+            <th>Options</th>
+        </tr>
+    </table>
+    <div>
+        <h2>Details of the Employee</h2>
+        <input placeholder="Employee ID" id="txtId"/>
+        <input placeholder="Employee Name" id="txtName"/>
+        <input placeholder="Employee Address" id="txtAddress" />
+        <input placeholder="Employee Salary" id="txtSalary" />
+    </div>
+</body>
+</html>

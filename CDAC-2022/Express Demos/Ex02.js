@@ -1,11 +1,11 @@
 //This Demo is to show how to handle static files inside the EXPRESS and handle Get and POst operations. 
 const app = require("express")();
 const parser = require("body-parser")//To parse the posted data from the Web Form. 
-const fs = require("fs")
 
 const root = __dirname;
 //Adds the logic for the Express to process the body of the POSTED DATA from the web form. 
-app.use(parser.urlencoded({extended:false}))//It is used if U want any specific format of body structure. 
+app.use(parser.urlencoded({extended:false}))//It is used if U want any specific format of body structure. If this is not sent, the body object of the request will not contain the posted data. 
+
 //Data posted by the Form will be stored as body object into the request.  This will happen only if EXPRESS is using the body parser module. 
 
 
