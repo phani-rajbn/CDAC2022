@@ -1,0 +1,17 @@
+Express is an additional node package available for Nodejs developers to create rich internet apps with less effort. It internally uses HTTP Module and gives a better set of APIS to create web apps in much faster and reliable manner. Express is a superset of HTTP. Express is available in Node Package Manager, a repository of all third party packages that are distributed to the node developers free of cost. 
+U too as a developer can create packages and distrubute it to the community. 
+Express is good for Web App development, REST API development and many other internet based app developments. 
+REST API is a set of functions that are exposed to the developers in the form of HTTP URLs. Programmers using their own programming technology can access these URLs and extract data(HTTP GET), post data(HTTP POST), remove data(HTTP DELETE) and update data(HTTP PUT). REST API is also called as Web API/ Springboot in other technologies. 
+REST stands for Representational State Transfer. The data is Transfered thro HTTP in the form of JSON or XML.   
+Examples of REST are youtube servics, Google maps services, yahoo email services are some of the popular services that are used in the industry. 
+Any Server side technology will have REST API support
+Java has Spring boot framework for creating REST API in Java
+C# has Web API for creating REST API in .NET 
+PHP also has features to create REST API in it. 
+NODE.JS has EXPRESS to create REST API in NODEJS using JS. 
+
+React App -> C# Web API Project -> SQL Server database using EF or LINQ to SQL.
+React App -> Spring Boot Project -> MySQL Database using hibernate.
+React App -> EXPRESS -> MONGODB using Moongoose, or DB connections.  
+React App -> NODE RED -> Azure/AWS -> Cloud(IoT)
+
