@@ -28,13 +28,10 @@ http.createServer((req, res)=>{
             res.end();
             return; 
         }
-    }else if(req.method == "POST"){
-        req.on('data', (inputs)=>{
-            let body = ''
-            body += inputs;
-            res.write(body);
-            res.end();
-            return;
+    }else if(req.method == "POST"){//data is an event of the req object which is triggered when a Page is posted to the server. 
+        req.on("data", function(inputs){
+            res.write(inputs);
+            res.end()
         })
     }
     switch (req.url) {
