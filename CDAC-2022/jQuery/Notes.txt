@@ -1,0 +1,4 @@
+jQuery is a JS library for building rich HTML pages with less code and more power. Its main purpose is to manipulate the DOM elements of the html and give more power on the client side coding. 
+Write less code and get more benefits is the motto of jQuery.
+jQuery is one single small file with large features in it. It is free and open source. U can download the minified version of the jquery from the popular website of jQuery. 
+CDN(Content delivery Networks) can also help in refering jQuery in ur code without a need to download it. 

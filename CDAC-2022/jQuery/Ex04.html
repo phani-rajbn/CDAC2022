@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table Example</title>
+    <script src="jquery.js"></script>
+    <script>
+        const data =[{"empID":123, "empname":"Phaniraj", "empAddres" :"Bangalore", "empSalary": 45000},
+        { "empID": 123, "empname": "Phaniraj", "empAddres": "Bangalore", "empSalary": 64000 },
+        { "empID": 123, "empname": "Phaniraj", "empAddres": "Bangalore", "empSalary": 23000 },
+        { "empID": 123, "empname": "Phaniraj", "empAddres": "Bangalore", "empSalary": 35000 },
+        { "empID": 123, "empname": "Phaniraj", "empAddres": "Bangalore", "empSalary": 40000 }
+        ];
+        $(document).ready(()=>{
+            $("h1:first-of-type").css("background-color", "green")
+            $.each(data, (i, v)=>{
+                let row =`<tr><td>${v.empID}</td><td>${v.empname}</td><td>${v.empAddres}</td><td>${data[i].empSalary}</td></tr>`
+                $("table").append(row)
+            })//jQuery version of foreach.
+            //$.each is asynchronous.
+            $("table").find("tr:odd").css("background-color", "red")
+            $("table").find("tr:even").css("background-color", "yellow")
+        })
+        //:first-child, last-child try these selectors. 
+    </script>
+</head>
+<body>
+    <h1>Displaying records</h1>
+    <h1>Displaying in table format</h1>
+    <table border="1">
+        <tr>
+            <th>Employee ID</th>
+            <th>Employee Name</th>
+            <th>Employee Address</th>
+            <th>Employee Salary</th>
+        </tr>
+    </table>
+</body>
+</html>

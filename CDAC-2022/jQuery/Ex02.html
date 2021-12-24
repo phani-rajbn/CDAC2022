@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selectors Demo</title>
+    <script src="jquery.js"></script>
+    <style>
+        div{
+            display: inline-block;
+            background-color: red;
+            width: 150px;
+            height: 200px;
+            margin: 10px;
+            padding: 10px;
+        }
+    </style>
+    <script>
+        //document.getElementbyId()//Gets only one element with matching id
+        //document.getElementsByTagName
+        //document.getElementsByClassname//Gets an HtmlCollection with the matching elements. 
+        $(document).ready(function(){
+            // $("div").mouseover(function(){//select every div in this page.....
+            //     $(this).css("background-color", "yellow")
+            // }).mouseleave(function(){
+            //     $(this).css("background-color", "red")
+            // })
+            $("div:gt(0)").click(()=>{
+                alert("Not the first div is clicked")
+            })
+            $("div:eq(0)").next().click(function(){
+                alert("Second Div is clicked")
+            })
+            $("div").last().click(()=>alert("This guy is the last one"))
+        })
+    </script>
+</head>
+<body>
+    <div>First Div</div>
+    <div>Second Div</div>
+    <div>Third Div</div>
+    <div>Fourth Div</div>
+</body>
+</html>

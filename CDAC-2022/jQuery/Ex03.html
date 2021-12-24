@@ -1,0 +1,45 @@
+<html>
+    <script src="jquery.js"></script>
+    <style>
+        span{
+            color:indianred;
+            font-size: 20pt;
+        }
+    </style>
+    <script>
+        $(document).ready(()=>{
+            $(".txt").focus(function(){
+                $(this).css("background-color", "red");
+                $(this).css("color", "yellow");
+            }).focusout(function(){
+                $(this).css("background-color", "white");
+                $(this).css("color", "black");
+            })
+            $("div:eq(0) > button").click(function(){
+                //extract all the values..
+                // const Id = $("#txtId").val();
+                // const Name = $("#txtName").val();
+                // const Address = $("#txtAddress").val();
+                // const Salary = $("#txtSalary").val();
+                $("#txtId, #txtName, #txtAddress, #txtSalary").each(function(value){
+                    $(this).css("background-color", "grey")
+                    console.log($(this).val())  
+                });
+                //let data = `${Id} is from ${Address} and his name is ${Name} and earns a salary of Rs. ${Salary}`
+                //$("span").text(data)
+            })
+        })
+    </script>
+    <body>
+        <div>
+            <input class="txt" id="txtId" placeholder="ID of the Employee"/>
+            <input class="txt" id="txtName" placeholder="Name of the Employee"/>
+            <input class="txt" id="txtAddress" placeholder="Address of the Employee" />
+            <input class="txt" id="txtSalary" placeholder="Salary of the Employee" />
+            <button>Display Details</button>
+        </div>
+        <div>
+            <span></span>
+        </div>
+    </body>
+</html>

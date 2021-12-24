@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animations Demo</title>
+    <script src="jquery.js"></script>>
+    <style>
+        nav {
+            background-color: blueviolet;
+            color: whitesmoke;
+            text-align: center;
+            padding: 20px;
+        }
+
+        a {
+            display: inline-block;
+            width: 150px;
+            height: 25px;
+            text-align: center;
+            background-color: khaki;
+            color: brown;
+        }
+
+        a:hover {
+            background-color: yellow;
+            color: yellowgreen;
+        }
+        div{
+            width: 350px;
+            height: 325px;
+            background-color: thistle;
+        }
+        button{
+            width: auto;
+            height: auto;
+        }
+    </style>
+    <script>
+        $(document).ready(()=>{
+            $("div").fadeOut(1000);
+            $("a:first").click(()=>{
+                $("div").fadeOut(1000);
+                $("div:first").fadeIn(2000)
+            })
+            $("a:eq(1)").click(() => {
+                $("div").fadeOut(1000);
+                $("div:eq(1)").fadeIn(2000)
+            })
+            $("a:last").click(() => {
+                $("div").fadeOut(1000);
+                $("div:last").fadeIn(2000)
+            })
+            $("button").click(()=>{
+                $("nav").slideToggle(1000);
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <h1>Welcome to HTML Programming</h1>
+    <button>+</button>
+    <nav>
+        <a href="#">Display All</a>
+        <a href="#">Add New</a>
+        <a href="#">About Us</a>   
+    </nav>
+    <div>
+        <h2>Details of the Employees</h2>
+        <p>Part of the Page that displays the records</p>
+    </div>
+    <div>
+        <h2>Adding new Employee</h2>
+        <p>Part of the Page that displays the records</p>
+    </div>
+    <div>
+        <h2>About Us!!!</h2>
+        <p>Part of the Page that displays the records</p>
+    </div>
+</body>
+</html>
