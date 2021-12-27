@@ -1,0 +1,21 @@
+React is a JS library built by facebook for creating User responsive web design and display the content as live data to the user and make it efficient. 
+It comprises of resuable UI components which are a part of an Application. It is used to create SPAs(Single Page apps). 
+Its main objective is to create Web apps in more optimized manner. It allows programmers to create UI components that has logic as well as html content with events, properties and state to maintain the data within the page when the UI components are rendered into the page. 
+It uses Virtual DOM (JS object) which improves the performance of page rendering into the browser. React will create a virtual Page on which all the elements will be placed which will be transfered to the original DOM(browser) at the time of page load making the page display faster. 
+React is purely a Client side technology used to create dynamic fast web pages. 
+It is based on Component architecture. UR React App is combination of various ready to use and reusable Components that has html, css and many web contents combined as a single unit. These units are reusable.
+UR files in React will contain both JS and XML in it. These files are saved as JSX files(JS+XML). Virtual DOM is created using XML and JS acts like the code to bind those DOM elements. 
+To Create components in React, we use library APIs and builtin classes which is extended to create UI components. All Components are classes of JS that inherits from React.Component class. 
+SOftware requirements:
+Nodejs for hosting support and distribution Support, 
+React App template downloaded from npm to start the app. 
+
+Steps to create React App:
+npm install -g npx ->Command to install NPX. 
+npx create-react-app nameofapp
+cd nameofapp ->Move to the directory where the app is created. 
+npm start ->makes the react app run. 
+
+
+
+
