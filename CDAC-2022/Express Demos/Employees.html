@@ -7,25 +7,43 @@
     <title>Employee Management</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
-        $(document).ready(function(){
-          $.get("Employees", (data)=>{
-              $.each(data, (index, value)=>{
-                  let row = `<tr><td>${value.empId}</td><td>${value.empName}</td><td>${value.empAddress}</td><td>${value.empSalary}</td><td><a class="edit" href="#" myId="${value.empId}">Edit</a></td></tr>`
-                  $("table").append(row)
-                  $(".edit").click(function(){
-                      let eId = $(this).attr("myId")
-                      const url = "Employees/" + eId;
-                      $.get(url, (data)=>{
-                        const selectedEmp = data[0];
-                        $("#txtId").val(selectedEmp.empId);
-                        $("#txtName").val(selectedEmp.empName);
-                        $("#txtAddress").val(selectedEmp.empAddress);
-                        $("#txtSalary").val(selectedEmp.empSalary);
-                      })
-                  }) 
-              })
 
-          })  
+        const url = 'http://localhost:1234/Employees'
+        const detailsFunc = function () {
+                let eId = $(this).attr("myId")
+                const temp = url + "/" + eId;
+                $.get(temp, (data) => {
+                    debugger;
+                    const selectedEmp = data[0];
+                    $("#txtId").val(selectedEmp.empId);
+                    $("#txtName").val(selectedEmp.empName);
+                    $("#txtAddress").val(selectedEmp.empAddress);
+                    $("#txtSalary").val(selectedEmp.empSalary);
+                })
+            }
+        getData = function(){
+            $("table").find("tr:gt(0)").remove()
+              $.get(url, (data) => {                  
+                $.each(data, (index, value) => {
+                    let row = `<tr><td>${value.empId}</td><td>${value.empName}</td><td>${value.empAddress}</td><td>${value.empSalary}</td><td><a class="edit" href="#" myId="${value.empId}">Edit</a></td></tr>`
+                    $("table").append(row)
+                    $(".edit").click(detailsFunc)
+                })
+            })  
+        }
+        $(document).ready(function(){
+            getData()
+            $("#btnAdd").click(function(){
+               let emp ={};//create a blank object
+                emp.empId = parseInt($("#txtId").val())
+                emp.empName = $("#txtName").val() 
+                emp.empAddress = $("#txtAddress").val() 
+                emp.empSalary = parseInt($("#txtSalary").val()) //take the values and place it into the object
+                $.post(url, emp, (msg)=>{ //emp is the data posted to the url and msg is the response for the post. 
+                    alert(msg)
+                    getData()
+                })
+            })
         })
     </script>
 </head>
@@ -45,6 +63,7 @@
         <input placeholder="Employee Name" id="txtName"/>
         <input placeholder="Employee Address" id="txtAddress" />
         <input placeholder="Employee Salary" id="txtSalary" />
+        <button id="btnAdd">Add to database</button>
     </div>
 </body>
 </html>

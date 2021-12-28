@@ -1,10 +1,12 @@
 const app = require("express")();//get the Express object. 
 const mongo = require("mongodb").MongoClient;//for connecting to mongodb...
 const parser = require("body-parser");//for handling posted data as body object. 
+const cors = require("cors")
 const root = __dirname;
 
 app.use(parser.urlencoded({"extended":true}))//tell the format of the Body when its posted. 
 app.use(parser.json())
+app.use(cors())//enable cors to Ur application
 
 let db;
 //Gets the db connection to the database
@@ -31,15 +33,25 @@ app.get("/Employees", (req, res)=>{
 })
 
 app.get("/Employees/:id", (req, res)=>{
-    const id = parseInt(req.params.id)
+    const id = parseInt(req.params.id)//Reads the Query string of the URL and extract the Id passed by the request. 
     db.collection("employees").find({"empId": id}).toArray((e, result)=> res.send(result))
 })
 
-
-
-app.get("/EmpList", (req, res)=>{
-    res.sendFile(root + "/Employees.html");
+app.post('/Employees', (req, res)=>{
+    let empRec = req.body;
+    console.log(empRec)
+    db.collection("employees").insert(empRec);
+    res.send("Employee inserted to the database")
 })
+
+//get method to extract the records from the server. 
+//post method to insert the record
+//put method to update the record
+//delete method to delete the record.
+
+// app.get("/EmpList", (req, res)=>{
+//     res.sendFile(root + "/Employees.html");
+// })
 
 app.listen(1234, ()=>{
     console.log("Server is ready!!")
