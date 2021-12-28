@@ -7,7 +7,6 @@
     <title>Employee Management</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
-
         const url = 'http://localhost:1234/Employees'
         const detailsFunc = function () {
                 let eId = $(this).attr("myId")
@@ -44,6 +43,33 @@
                     getData()
                 })
             })
+            $("#btnDelete").click(function(){
+                const id = parseInt(prompt("Enter the ID to delete"));
+                const temp = url + "/" + id;
+                $.ajax({
+                   'url':temp,
+                   'method':'DELETE',
+                   'success' : function(res){
+                       alert(res)
+                   } 
+                })
+            })
+            $("#btnUpdate").click(function(){
+                let emp = {};//create a blank object
+                emp.empId = parseInt($("#txtId").val())
+                emp.empName = $("#txtName").val()
+                emp.empAddress = $("#txtAddress").val()
+                emp.empSalary = parseInt($("#txtSalary").val())
+                $.ajax({
+                    'url' : url,
+                    'data' : emp,
+                    'method' : 'PUT',
+                    success : function(res){
+                        alert(res)
+                    }
+                })
+
+            })
         })
     </script>
 </head>
@@ -64,6 +90,15 @@
         <input placeholder="Employee Address" id="txtAddress" />
         <input placeholder="Employee Salary" id="txtSalary" />
         <button id="btnAdd">Add to database</button>
+        <button id="btnUpdate">Update database</button>
+    </div>
+    <div>
+        <h2>Delete any Record</h2>
+        <div>
+            <p>
+                <button id="btnDelete">X</button>
+            </p>
+        </div>
     </div>
 </body>
 </html>

@@ -44,6 +44,19 @@ app.post('/Employees', (req, res)=>{
     res.send("Employee inserted to the database")
 })
 
+app.delete("/Employees/:id", (req, res)=>{
+    const id = parseInt(req.params.id);
+    db.collection("employees").remove({"empId": id});
+    res.send("Employee deleted successfully")
+})
+
+app.put("/Employees", (req, res)=>{
+    let rec = req.body;
+    console.log(rec)
+    //todo: add the mongodb code to update.
+    res.send("Employee updated!!!")
+})
+
 //get method to extract the records from the server. 
 //post method to insert the record
 //put method to update the record
@@ -57,3 +70,20 @@ app.listen(1234, ()=>{
     console.log("Server is ready!!")
 })
 
+/*
+To REad in React:
+React Basics
+Components: Stateless vs Statefull
+Props and Refs.
+Inner Components and Outer Components. 
+Redux. 
+Hooks in react.
+State management
+Calling REST service. 
+*/
+/*
+What we learnt:
+Nodejs: Creating Server environment
+EXPRESS: Data Interactions
+React/jQuery: UI of the Application
+*/
