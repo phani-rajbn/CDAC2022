@@ -1,0 +1,65 @@
+DevOps:
+DevOps: Development + Operations. 
+DevOps is a collaboration b/w the development team and IT Operations to make the software production and deployment in a automated and repeated manner. It helps to increase the Company's speed to deliver the software and its services to the customers. It is a combination of 2 words: Development and Operations.
+Allows organizations to serve their customers better and complete the process is much faster manner. 
+
+Why DevOps?
+Before DevOps, Development and Operations team worked in complete isolation.
+Testing and Deployment were isolated activities done after the design build. They consumed more time than actual build cycles. 
+Manual code deployement leads to human errirs in production. 
+With DevOps, software delivery has increased to around 20% since many companies have started to work on DevOps. 
+
+Predictability: DevOps gives low failure rates compared to other deployement technologies. 
+Reproducibility: U can version everything, so in case if something goes wrong, U can revert to the older version without any issue. 
+Maintainability: 
+
+When to go for DevOps?
+DevOps should be used for large distributed Computing apps like ECommmerce sites and apps hosted on cloud Platform. 
+
+DevOps uses Continuous LifeCycle:
+Plan->Code->Build->Test->Release->Deploy->Operate->Monitoring. 
+
+Differences b/w Agile and DevOps:
+Agile is more on addressing the gaps in the Customer and Developer Communications
+Devops is more on addressing the gaps b/w the Developer and IT Operations Communications. 
+
+Devops Principles:
+1. Customer-Centric-Action: DevOps teams must take customer centric action for that they should constantly invest in products and services. 
+2. End to End Responsibility: Teams  need to provide performance support till the end of the Deployement. This increases  the level of responsibility and the quality of the Products engineered. 
+3. Continuous improvement: Culture of DevOps focuses on improvising the Development and Deployment with minimal waste. It speeds up with the improvement of product or services. 
+4. Automate everything: One must automate the complete infrastructure of the product from start to the end. 
+5. Work as one Team: DevOps culture states that the designer, developer and tester should do the work as a team with Complete Collaboration. 
+6. Monitor and Test Everything: It is important for the DevOps team to have a robust monitoring and testing procedures and should be able to test every part of the application in a continuous process. 
+
+DevOps Engineer: A guy who works with S/w Developers, system operators and other IT Staff to do the appropriate time bound releases. He should have both machine skillsets as well as soft skills to communicate and collaborate with the developers, testers and the operations teams. 
+He will work with the Developer Team staff to tackle the coding and scripting needed to connect different elements of code like Libraries, Services, SDKs and versions of the OSs on which UR App is supposed to be deployed. 
+
+DevOps Automation Tools required:
+Configuration management : Chef is one of the Tools for achieving speed, scale and consistency. 
+Infrastructure automation ->AWS or  Azure , Vagrant, 
+Deployment automation tools: Jenkins helps in continuous integration and testing.. 
+Performance Management
+Log Management: Splunk, Log4J are some of the tools that will solve the issues like storing, analysis etc. 
+Monitoring: Nagios .
+---------------------------------------------------------------------------------------
+Docker: Is a centralized platform for packaging, deploying and running the applications. 
+What is Docker? It is a open source Centralized platform to create, deploy and run various kinds of Applications on different platforms without a need to understand the architecture of the device. Dockers use Containers on the host's OS to run the apps. It will create a Linux kernel at the Host's machine unlike VMs. 
+Containers are blocks within the docker that holds a running software in them. 
+COmponents: Docker Client, Docker servers, Docker machines etc. 
+Containers: Light weight blocks that are alternative to VMs. It allows the developers to package the application and ship it into a single package where the required infrastructure will be taken from the Machine on which it is installed and the docker  will generate the required storage and the space as per the App requirement. 
+It is different from VMs where in Containers, U have the infrastructure required to execute the app that U have placed in it. But in VMs, it is like an alternative OS installed in ur machine and can do more  that just run UR program. Containers use the same kernel of the Host environment but VMs use independent OS Kernels. 
+
+Steps for creating a Docker image in UR Hosting Environment
+Install the Docker Desktop and restart the machine
+Create a new directory which contains the app that U want to deploy. (In this case, a Simple java App)
+Create a Dockerfile with the data shared that includes info about the version of Java, commands to execute. 
+Build the docker Image using the following command: docker build -t java-app .
+Check for UR App image: docker images
+docker run java-app
+
+ 
+
+
+
+
+ 
