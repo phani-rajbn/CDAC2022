@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./jquery-3.6.0.min.js""></script>
+    <title>Document</title>
+    <script>
+        const url = "http://localhost:8080/EmpList"
+        $(document).ready(function(){
+            $("article").text("");
+            $.get(url, (data)=>{
+                   $.each(data, (index, value)=>{
+                     const row =`<div><h1>${value.empName}</h1><hr/><p>Emp ID: ${value.empId}</p><p>Emp Address: ${value.empAddress}</p><p>Emp Salary: ${value.empSalary}</p><p><button>Edit</button></p></div>`
+                     $("article").append(row);     
+                }) 
+            })
+        })
+    </script>
+</head>
+<body>
+    <h1>Employee Info System</h1>
+    <article>
+
+    </article>
+</body>
+</html>
