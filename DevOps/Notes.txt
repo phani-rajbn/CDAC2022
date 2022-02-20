@@ -56,7 +56,38 @@ Create a Dockerfile with the data shared that includes info about the version of
 Build the docker Image using the following command: docker build -t java-app .
 Check for UR App image: docker images
 docker run java-app
+-------------------------------------JENKINS-----------------------------
+Continuous Integration: A orchestration of a chain of activities to perform continuous integration in an automated fashion that helps in pipelining the application deployment and operational sequence.  It automates in building, testing, documenting, deploying and operational activities. 
+One of the popular CI tool is Jenkins. 
 
+How does it work?
+Jenkins is a server based application and requires a web server like Apache tomcat to run on various platforms like WIndows, Linux, Mac etc. To use the Jenkins, we need pipelines which are series of steps that the Jenkins server will take. This is called as Jenkins Continuous Integration pipeline. It will internally contain series of tools designed to host, monitor, compile and test the code and update the Code changes 
+
+Developers work in Git. 
+Testers will work on JUnit, Selenium, Cucumber. 
+Jenkins links bw all the stake holders of the App development. 
+operations teams work on Docker and other container platforms. 
+
+Steps:
+Install JDK 8 or later. Set the environment variables for JAVA_HOME, JRE_HOME and Path. 
+Download the Jenkins from the Website. 
+echo "Hai from Jenkins for my first job : %date% : %time%
+---------------------------------Microservices using Spring boot-------------------------------------------
+SOA feature where UR large service is divided into small units where each unit works independently  and made as a group. Each microservice caters the services to a group of external users or to other services and when combined with other microservices makes a very large service.  
+The services are exposed using REST. Architects decide what makes a microservice. They are usually well choosen deployeable units. Most of the time, the microservices are designed for Cloud computing. 
+It is based on the following principles:
+Single Reponsibility Principle
+Enabled with Infrastructure automation. 
+Deployed Independently
+Any failures to the service will not hamper the other players of the larger service. 
+Well created to suit UR business requirement(Matching to a specific domain).
+A service is basically a function  that is mapped to a URL link where data or functionality  is achieved by accessing that data. 
+SpringBoot is used for creating Microservices in real time apps. 
+
+SOA(Service Oriented Architecture) does not mean MSA(Microservices Architecture).
+MSA is light weight based on HTTP and uses REST. Main focus is to maintain the service as simple as possible. No bigger architecture is involved. Data can be XML, JSON or any prescribed format. 
+SOA follows multi messaging platforms. They are old. Data was usually based on XML. Web services was the popular SOA support. 
+Microservices are inclined on Cloud  Computing and depend on Monitoring tools like Eureka and Hystrix. With these tools, U can connect to many 3rd party services available in the Cloud and get its info in ur apps. UR services could be registered in Eureka and allow customers to consume ur service.  
  
 
 
