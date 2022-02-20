@@ -1,0 +1,73 @@
+What is Kubernetes?
+Kubernetes is a  container management system developed by Cloud native Computing foundation that is developed on Google platform. It helps to manage containerised apps in various types of physical, virtual, and cloud environments. Kubernetes is a highly flexible container tool to deliver complex apps running on clusters of 1000s of individual servers. 
+It comes with a capability of automating deployement, scaling of apps and operations of application containers across clusters. It is mainly designed for container certric infrastructure
+
+Why you need containers?
+Current web users dont expect any kind of downtime in their apps. Developers have to find a method to perform maintenance and update without interuppting their services. So they need containers which are isolated environments. Containers will contain min things that is required to run the application. This makes the developer easy to work and deploy. It is the most prefered method for packaging, deploying and running the applications. 
+management of such large no containers is what Kubernetes offers. 
+
+What does Kubernetes do?
+It is a Linux kernel that shares lots of resources required to manage complex apps. It is used for distributed computing where it abstracts the underlying hardware of servers and offer a std and consistant interface for apps to consume a shared pool of resources.
+
+Features:
+Automatic scheduling.
+Continous development, integration and deployement.
+Automated Rollouts and rollBacks.
+Infrastructure is loosely coupled to each component that can act as a seperate unit. 
+Provides high density of Resource utilization. 
+application centric management. 
+environment consistancy for testing and productions. 
+
+Kubernetes follows cluster architechture for its management.
+Some key terms in Kubernetes:
+POD: Is the smallest and the simpliest basic unit of a K8s App. It can be a single application that is running in one or a group of containers. 
+NODE: Is a single Host which is capable of running on a physical or virtualmachine. They are also called as Minions. 
+Service: A Service is K8s is a logical set of pods which work together for a better and bigger functionality. 
+cluster: All these things are placed in a collection of servers called as cluster. Cluster is a collection of servers that help in managing/sharing of your available resources like RAM, CPU, DISK  and their devices into a usable pool.
+
+MASTER: Collection of Components that make up the control panel of Kubernetes. The job of any k8s admin is to make cluster decisions like scheduling, responding to the cluster events and managing the resources so that no application could have any kind of downtime. 
+NAMESPACE: Is a logical cluster or environment. U could use namespaces to divide the clusters on a logical grouping. 
+
+Components of Master node:
+Master node actually runs several Kubernetes processes that is nessasary to run and manage the cluster properly. One such process is the api-server. This is the entry point to the cluster. This process is the one the clients will talk to, if U R using a Kubernetes dashboard, any call U make like scripts and automating technologies and a command line tool will first hit the api server. 
+Controller manager keeps an overview of what is happening in the cluster like a Container died and it needs to restart or a break down in of the containers which has to be rescheduled due to some hardware mismatch etc.
+Scheduler is responsible for scheduling containers on different nodes based on the workload and the available server resources on each node. It is a very smart process that decides on which worker node the next container should be scheduled on the basis of available resources on those nodes that are open and handle the requests.
+
+There is one more process called as etcd key value storage which holds the config data at any given point of time and also the status data of each node, containers inside each node and its backup and restoring mechanism. 
+In some configurations, U can have a snapshot of the whole state of the application which will be restored from that point if a application crashes. 
+
+Other key terminologies:
+Replication Controllers: A replication controller is an object that defines a pod template. It also contriols the parameters to scale the identical replicas of the PODs by increasing or decreasing the no of copies for scalable purposes. 
+Replication sets: Sets are an interaction on the controller with flexibility on how the controller recognises the pods that is it meant to manage. This will create sets of pods to manage their capabilities.  
+Deployements: The replicated Pods are placed in an ordered fashion in the form of deployment tools usually horizontal layers. It is a common workload whose job is to create and manage the replication sets. 
+Stateful sets: It is a specialized pod control that offers ordering and uniqueness. It is mainly used to have fine-grained control which helps in deployment of scalable pods and persistant data. 
+Daemon sets: Runs a copy of a pod on every node in the cluster. It is an effective metthod to deploy the pods that allow you to perform maintenance and offer services for the nodes themselves. 
+
+Kubernetes(large scaled apps) vs. Docker Swarm(Small scaled Apps):
+Kubernetes is designed to have auto scaling feature when it comes to larger users. 
+Kubernetes shares the storage volumes b/w the multiple containers inside the same pod whereas Swarms share storage volumes with any other containers. 
+Kubernetes demands a large infrastructure and is complicated and time consuming, but Docker Swarms are easy to install and they are fast.
+Kubernetes comes with a fairly available User interface, but Swarms dont have any UI. 
+Kubernetes does not have any kind of automatied load balancing that U find in swarms. However U could provide process scheduling to maintain the services while U R updating. 
+
+
+Advantages:
+With its dashboard and infrastructure, U can easily maintain the Kubernetes environment. 
+Developed by Google, there is lot of industrial experience.
+One of the largest community among the container orchestration tools.
+It has support of various Cloud computing players like Azure, Google, AWS and OpenStack.
+K8s Administrator has good tools support to scale up any vender specific services but not on all, as certain abstractions are provided by Kubernetes for its own benefits.
+It has got a lot of community help like Stackoverflow and other developer communities. 
+It is easy to find resources and tools and help in containerised management. 
+
+Disadvantages:
+dashboard provided by kubernetes is not as good as U find in Docker or any other container tools. 
+It is complicated and some times it is not required unless U have a large no of containers with different environements to work with. 
+Security is not that effective when it comes to distributed computing like Container orchestration. 
+
+
+
+
+
+
+
